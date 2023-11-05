@@ -1,0 +1,27 @@
+.jumbotron{
+    margin:20px;
+}
+
+.centradotitulos{
+    text-align: center;
+}
+
+.parrafos{
+    text-align: center;
+}
+
+.btn btn-danger{
+    text-align: center;
+}
+
+/* Zoom a imagen */
+.rounded-circle{
+    transition: 0.5s;
+    object-fit: cover;
+    overflow:hidden;
+}
+
+.rounded-circle:hover{
+    transform:scale(1.2)
+
+}
