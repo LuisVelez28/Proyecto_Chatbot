@@ -35,8 +35,8 @@
     "@testing-biblioteca/usuario-evento": "^7.2.1",
     "reaccionar": "^16.13.1",
     "reacción": "^16.13.1",
-    "react-router-dom": "^5.2.0","reaccionar-scripts": "3.4.1"
-    
+    "react-router-dom": "^5.2.0",
+    "reaccionar-scripts": "3.4.1"
   },
   "guiones": {
     "empezar": "inicio de scripts de reacción",

@@ -1,0 +1,48 @@
+h1{
+    color:black;
+
+}
+
+a{
+    color:black;
+}
+
+
+.nav-link{
+    color:black;
+}
+
+
+.jumbotron{
+    margin:20px;
+}
+
+.centradotitulos{
+    text-align: center;
+}
+
+.parrafos{
+    text-align: center;
+}
+
+.btn btn-danger{
+    text-align: center;
+}
+
+/* Zoom a imagen */
+.rounded-circle{
+    transition: 0.5s;
+    object-fit: cover;
+    overflow:hidden;
+}
+
+.rounded-circle:hover{
+    transform:scale(1.2)
+
+}
+
+
+.tamañoimagen{
+    max-width: 500px;
+    max-height: 500px;
+}
