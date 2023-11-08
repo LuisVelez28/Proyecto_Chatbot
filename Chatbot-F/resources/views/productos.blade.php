@@ -56,7 +56,7 @@
                     <div class="row">
                         <div class="col-md-4 mb-3">
                             <div class="card">
-                                <img alt="100%x280" class="tamañoimagen" src="imagenes\empanadas.jpg">
+                                <img alt="100%x280" class="tamañoimagen" src="img\empanadas.jpg">
                                 <div class="card-body">
                                     <h5 class="card-title">Empanadas</h5>
                                     <h6 class="card-subtitle mb-2 text-muted"></h6>
@@ -71,7 +71,7 @@
                         </div>
                         <div class="col-md-4 mb-3">
                             <div class="card">
-                                <img alt="100%x280" class="tamañoimagen" src="imagenes\arepas.jpg">
+                                <img alt="100%x280" class="tamañoimagen" src="img\arepas.jpg">
                                 <div class="card-body">
                                     <h5 class="card-title">Arepas de Queso</h5>
                                     <h6 class="card-subtitle mb-2 text-muted"></h6>
@@ -86,7 +86,7 @@
                         <div class="col-md-4 mb-3">
                             <div class="card">
                                 <img class="img-fluid" alt="100%x280"
-                                class="tamañoimagen" src="imagenes\panzeroti.jpg">
+                                class="tamañoimagen" src="img\panzeroti.jpg">
                                 <div class="card-body">
                                     <h5 class="card-title">Pancherottis</h5>
                                     <h6 class="card-subtitle mb-2 text-muted"></h6>
@@ -106,7 +106,7 @@
 
                         <div class="col-md-4 mb-3">
                             <div class="card">
-                                <img class="img-fluid" alt="100%x280" class="tamañoimagen" src="imagenes\pandebono.jpg">
+                                <img class="img-fluid" alt="100%x280" class="tamañoimagen" src="img\pandebono.jpg">
                                 <div class="card-body">
                                     <h5 class="card-title">Pandebonos</h5>
                                     <h6 class="card-subtitle mb-2 text-muted">     </h6>
@@ -121,7 +121,7 @@
                         </div>
                         <div class="col-md-4 mb-3">
                             <div class="card">
-                                <img class="img-fluid" alt="100%x280" class="tamañoimagen" src="imagenes\jugos.jpg">
+                                <img class="img-fluid" alt="100%x280" class="tamañoimagen" src="img\jugos.jpg">
                                 <div class="card-body">
                                     <h5 class="card-title">Diversos Jugos</h5>
                                     <h6 class="card-subtitle mb-2 text-muted">
@@ -136,7 +136,7 @@
                         </div>
                         <div class="col-md-4 mb-3">
                             <div class="card">
-                                <img class="img-fluid" alt="100%x280" class="tamañoimagen" src="./imagenes/conferencistas/eguerrero.jpg">
+                                <img class="img-fluid" alt="100%x280" class="tamañoimagen" src="./img/conferencistas/eguerrero.jpg">
                                 <div class="card-body">
                                     <h5 class="card-title">Predicción basada en datos</h5>
                                     <h6 class="card-subtitle mb-2 text-muted">Enrique Gonzalez Guerrero</h6>
@@ -156,7 +156,7 @@
 
                         <div class="col-md-4 mb-3">
                             <div class="card">
-                                <img class="img-fluid" alt="100%x280" src="imagenes/conferencistas/sousa.jpg">
+                                <img class="img-fluid" alt="100%x280" src="img/conferencistas/sousa.jpg">
                                 <div class="card-body">
                                     <h5 class="card-title">Tendencias Modernas en Gestión de Proyectos</h5>
                                     <h6 class="card-subtitle mb-2 text-muted">Andres Souza</h6>
@@ -170,7 +170,7 @@
                         </div>
                         <div class="col-md-4 mb-3">
                             <div class="card">
-                                <img class="img-fluid" alt="100%x280" src="/imagenes/conferencistas/mario.jpg">
+                                <img class="img-fluid" alt="100%x280" src="/img/conferencistas/mario.jpg">
                                 <div class="card-body">
                                     <h5 class="card-title">Virtual Machines and Containers Running Artificial
                                         Intelligent Applications</h5>
@@ -185,7 +185,7 @@
                         </div>
                         <div class="col-md-4 mb-3">
                             <div class="card">
-                                <img class="img-fluid" alt="100%x280" src="/imagenes/conferencistas/gillber.jpg">
+                                <img class="img-fluid" alt="100%x280" src="/img/conferencistas/gillber.jpg">
                                 <div class="card-body">
                                     <h5 class="card-title">Ciberseguridad: ¿cómo construir una carrera en la era de
                                         la IA?</h5>

@@ -48,7 +48,7 @@
         <div class="card-body">
             <h5 class="card-title">Sede Parque Caldas</h5>
             <p class="card-text">Una de nuestras sedes más centrales, donde encontrarás nuestros productos</p>
-            <img src="imagenes\parquecaldas.jpg" width="500" height="400" class="square" />
+            <img src="img\parquecaldas.jpg" width="500" height="400" class="square" />
             <hr />
             <a href="https://www.google.com/maps/dir/5.0513254,-75.5160121/sedes+la+plancha+manziales/@5.0499206,-75.5319821,13z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x8e476ff0e268c5a3:0xdb44f3b2c3bff5e!2m2!1d-75.5131944!2d5.0681492?entry=ttu"
                 class="btn btn-danger">Ubicación</a>
@@ -60,7 +60,7 @@
         <div class="card-body">
             <h5 class="card-title">Sede Fábrica</h5>
             <p class="card-text">Nuestro amor está puesto en cada producto ¡Disfrutalos!</p>
-            <img src="imagenes\fabrica.jpg" width="500" height="400" class="square" />
+            <img src="img\fabrica.jpg" width="500" height="400" class="square" />
             <hr />
             <a href="https://www.google.com/maps/dir//La+Plancha+F%C3%A1brica,+Cl.+46a+%2321+49,+Manizales,+Caldas/@5.0673276,-75.5174928,15z/data=!4m8!4m7!1m0!1m5!1m1!1s0x8e476f8945d47c41:0x5b53ade41239de1!2m2!1d-75.5011884!2d5.0665069?entry=ttu"
                 class="btn btn-danger">Ubicación</a>
@@ -72,7 +72,7 @@
         <div class="card-body">
             <h5 class="card-title">Sede Confa de la 50</h5>
             <p class="card-text">¡Estamos cerca de tí, ven y comparte con los seres que amas!</p>
-            <img src="imagenes\confa.jpg" width="500" height="400" class="square" />
+            <img src="img\confa.jpg" width="500" height="400" class="square" />
             <hr />
             <a href="https://www.google.com/maps/dir//Cra.+25+%2350-18,+Manizales,+Caldas/@5.06254,-75.5010605,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x8e476f8989f452b5:0x2440520f459a8db7!2m2!1d-75.4984856!2d5.0625347?hl=es&entry=ttu"
                 class="btn btn-danger">Ubicación</a>
