@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -19,22 +20,29 @@
     <link rel="stylesheet" href="css/custom.css">
 
     <!-- Load fonts style after rendering the layout styles -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
     <link rel="stylesheet" href="css/fontawesome.min.css">
 </head>
 
- <!-- Header -->
- <nav class="navbar navbar-expand-lg navbar-light shadow">
-  <div class="container d-flex justify-content-between align-items-center">
-  <div class="w-100 d-flex justify-content-between">
-            <a href="/" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('inicio','','img/Recurso 2.png',1)"><img src="img/Recurso 1.png" alt="" width="80" height="75" id="inicio"></a><a class="navbar-brand text-success logo h1 align-self-start" href="/">
-          &nbsp; </a>
+<!-- Header -->
+<nav class="navbar navbar-expand-lg navbar-light shadow">
+    <div class="container d-flex justify-content-between align-items-center">
+        <div class="w-100 d-flex justify-content-between">
+            <a href="/" onMouseOut="MM_swapImgRestore()"
+                onMouseOver="MM_swapImage('inicio','','img/Recurso 2.png',1)"><img src="img/Recurso 1.png"
+                    alt="" width="80" height="75" id="inicio"></a><a
+                class="navbar-brand text-success logo h1 align-self-start" href="/">
+                &nbsp; </a>
 
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+                data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-    <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="templatemo_main_nav">
+            <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between"
+                id="templatemo_main_nav">
                 <div class="flex-fill">
                     <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
                         <li class="nav-item">
@@ -51,20 +59,21 @@
                         </li>
                     </ul>
                 </div>
-        </div>
-                </div>
             </div>
+        </div>
+    </div>
 
-      </div>
+    </div>
 </nav>
-    <!-- Close Header -->
+<!-- Close Header -->
 
 {{-- CUERPO --}}
+
 <body>
-    <br/>
+    <br />
     <div class="text-center">
         <h3 class="">Conoce Nuestros Productos</h3>
-        <hr/>
+        <hr />
     </div>
     <div class="col-12">
         <div id="carouselExampleIndicators" class="carousel slide">
@@ -79,7 +88,7 @@
                                     <h6 class="card-subtitle mb-2 text-muted"></h6>
                                     <div class="row border-time">
                                         <div class="col">
-                                            
+
                                         </div>
                                     </div>
                                 </div>
@@ -102,8 +111,7 @@
                         </div>
                         <div class="col-md-4 mb-3">
                             <div class="card">
-                                <img class="img-fluid" alt="100%x280"
-                                class="tamañoimagen" src="img\panzeroti.jpg">
+                                <img class="img-fluid" alt="100%x280" class="tamañoimagen" src="img\panzeroti.jpg">
                                 <div class="card-body">
                                     <h5 class="card-title">Pancherottis</h5>
                                     <h6 class="card-subtitle mb-2 text-muted"></h6>
@@ -126,10 +134,10 @@
                                 <img class="img-fluid" alt="100%x280" class="tamañoimagen" src="img\pandebono.jpg">
                                 <div class="card-body">
                                     <h5 class="card-title">Pandebonos</h5>
-                                    <h6 class="card-subtitle mb-2 text-muted">     </h6>
+                                    <h6 class="card-subtitle mb-2 text-muted"> </h6>
                                     <div class="row border-time">
                                         <div class="col">
-                                       
+
 
                                         </div>
                                     </div>
@@ -153,7 +161,8 @@
                         </div>
                         <div class="col-md-4 mb-3">
                             <div class="card">
-                                <img class="img-fluid" alt="100%x280" class="tamañoimagen" src="./img/conferencistas/eguerrero.jpg">
+                                <img class="img-fluid" alt="100%x280" class="tamañoimagen"
+                                    src="./img/conferencistas/eguerrero.jpg">
                                 <div class="card-body">
                                     <h5 class="card-title">Predicción basada en datos</h5>
                                     <h6 class="card-subtitle mb-2 text-muted">Enrique Gonzalez Guerrero</h6>
@@ -222,7 +231,7 @@
     </div>
     </div>
     <div class="row pt-4 mt-4 row justify-content-between">
-        <div class="text-center" >
+        <div class="text-center">
             <a class="btn mb-3 mr-1" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                 <i class="btn btn-danger">Anterior</i>
             </a>

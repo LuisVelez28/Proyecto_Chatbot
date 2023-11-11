@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\ProductosController;
+use App\Http\Controllers\RangoPreciosController;
+use App\Http\Controllers\SaboresController;
+use App\Http\Controllers\TipoProductosController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,3 +32,12 @@ Route::get('/Productos', function () {
 Route::get('/Sedes', function () {
     return view('sedes');
 });
+
+Route::get('/CuentaAdmin', function () {
+    return view('cuenta_Admin.indexAdmin');
+});
+Route::resource('/productos', ProductosController::class);
+Route::resource('/rangoPrecios', RangoPreciosController::class);
+Route::resource('/sabores', SaboresController::class);
+Route::resource('/tipoProductos', TipoProductosController::class);
+
