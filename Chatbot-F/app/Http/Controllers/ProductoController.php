@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Producto;
-use App\Models\Rango_precio;
+use App\Models\RangoPrecio;
 use App\Models\Sabor;
 use App\Models\Tipo_producto;
 use Illuminate\Http\Request;
 
-class ProductosController extends Controller
+class ProductoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,10 @@ class ProductosController extends Controller
     public function index()
     {
         $productos= Producto::all();
-        return view('cuenta_Admin.producto.create',compact('productos'));
+        $tipos_sabores= Sabor::all();
+        $tipos_productos= Tipo_producto::all();
+        $rangos_precios= RangoPrecio::all();
+        return view('cuenta_Admin.producto.create',compact('productos','tipos_sabores','tipos_productos','rangos_precios'));
     }
 
     /**
@@ -36,6 +39,7 @@ class ProductosController extends Controller
         $producto->nombre=$request->nombre;
         $producto->descripcion=$request->descripcion;
         $producto->precio=$request->precio;
+        $producto->stock=$request->stock;
         $producto->id_sabor=$request->id_sabor;
         $producto->id_tipo_producto=$request->id_tipo_producto;
         $producto->id_rango_precio=$request->id_rango_precio;
@@ -55,18 +59,24 @@ class ProductosController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Producto $producto)
+    public function edit(/*Producto*/ $producto)
     {
-        $producto= Producto::find($producto->id);
-        return view('producto.edit',compact('producto'));
+        $producto= Producto::find($producto);
+        $tipo_sabor = $producto->id_sabor;
+        $tipos_sabores= Sabor::all();
+        $tipo_producto = $producto->id_tipo_producto;
+        $tipos_productos= Tipo_producto::all();
+        $rango_precio = $producto->id_rango_precio;
+        $rangos_precios= RangoPrecio::all();
+        return view('cuenta_Admin.producto.edit',compact('producto','tipos_sabores','tipos_productos','rangos_precios','tipo_sabor','tipo_producto','rango_precio'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Producto $producto)
+    public function update(Request $request, /*Producto*/ $producto)
     {
-        $producto= Producto::find($producto->id);
+        $producto= Producto::find($producto);
         $producto->nombre=$request->nombre;
         $producto->descripcion=$request->descripcion;
         $producto->precio=$request->precio;

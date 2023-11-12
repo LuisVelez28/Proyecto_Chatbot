@@ -15,7 +15,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{route('rangoPrecio.index')}}">
+                <a class="nav-link" href="{{route('rangoPrecios.index')}}">
                     <span data-feather="shopping-cart" class="align-text-bottom"></span>
                     Rango Precios
                 </a>

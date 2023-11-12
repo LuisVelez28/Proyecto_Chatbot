@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('descripcion');
             $table->integer('precio');
             $table->integer('stock');
-            $table->foreignId('id_sabor')->constrained('sabores');
+            $table->foreignId('id_sabor')->constrained('sabors');
             $table->foreignId('id_rango_precio')->constrained('rango_precios');
             $table->foreignId('id_tipo_producto')->constrained('tipo_productos');
             $table->timestamps();

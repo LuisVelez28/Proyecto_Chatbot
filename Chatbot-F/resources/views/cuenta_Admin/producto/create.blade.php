@@ -12,24 +12,24 @@
                     @csrf
                     <div class="mb-3">
                         <label for="nombre" class="form-label">Nombre</label>
-                        <input type="string" class="form-control" id="placa" name="placa">
+                        <input type="string" class="form-control" id="nombre" name="nombre">
                     </div>
                     <div class="mb-3">
                         <label for="descripcion" class="form-label">Descripcion</label>
-                        <input type="string" class="form-control" id="modelo" name="modelo">
+                        <input type="string" class="form-control" id="descripcion" name="descripcion">
                     </div>
                     <div class="mb-3">
                         <label for="precio" class="form-label">Precio</label>
-                        <input type="integer" class="form-control" id="marca" name="marca">
+                        <input type="integer" class="form-control" id="precio" name="precio">
                     </div>
                     <div class="mb-3">
                         <label for="stock" class="form-label">Stock</label>
-                        <input type="integer" class="form-control" id="capacidad" name="capacidad">
+                        <input type="integer" class="form-control" id="stock" name="stock">
                     </div>
                     <div class="mb-3">
                         <label for="sabores" class="form-label">Sabor</label>
                         <select class="form-control" name="id_sabor" id="sabores">
-                            @foreach ($tipos_salores as $sabores)
+                            @foreach ($tipos_sabores as $sabores)
                                 <option value="{{ $sabores->id }}">{{ $sabores->nombre }}</option>
                             @endforeach
                         </select>
@@ -61,6 +61,9 @@
                     <th>Descripcion</th>
                     <th>Precio</th>
                     <th>Stock</th>
+                    <th>Sabor</th>
+                    <th>Rango precio</th>
+                    <th>Tipo producto</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
@@ -71,6 +74,9 @@
                         <td>{{ $producto->descripcion }}</td>
                         <td>{{ $producto->precio }}</td>
                         <td>{{ $producto->stock }}</td>
+                        <td>{{ $sabores->nombre }}</td>
+                        <td>{{ $rango_precios->nombre }}</td>
+                        <td>{{ $tipo_productos->nombre }}</td>
                         <td>
                             <a href="{{ route('productos.edit', $producto) }}" class="btn btn-warning">Editar</a>
                             <form action="{{ route('productos.destroy', $producto) }}" method="post" class="d-inline">

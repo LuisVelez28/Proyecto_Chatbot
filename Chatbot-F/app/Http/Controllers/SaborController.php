@@ -5,15 +5,15 @@ namespace App\Http\Controllers;
 use App\models\Sabor;
 use Illuminate\Http\Request;
 
-class SaboresController extends Controller
+class SaborController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $sabor= Sabor::all();
-        return view('cuenta_Admin.sabor.create',compact('sabor'));
+        $sabores= Sabor::all();
+        return view('cuenta_Admin.sabores.create',compact('sabores'));
     }
 
     /**
@@ -48,18 +48,18 @@ class SaboresController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Sabor $sabor)
+    public function edit(/*Sabor*/ $sabor)
     {
-        $sabor= Sabor::find($sabor->id);
-        return view('sabor.edit',compact('sabor'));
+        $sabor= Sabor::find($sabor);
+        return view('cuenta_admin.sabores.edit',compact('sabor'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Sabor $sabor)
+    public function update(Request $request, /*Sabor*/ $sabor)
     {
-        $sabor= Sabor::find($sabor->id);
+        $sabor= Sabor::find($sabor);
         $sabor->nombre=$request->nombre;
         $sabor->descripcion=$request->descripcion;
         $sabor->save();
@@ -69,9 +69,9 @@ class SaboresController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Sabor $sabor)
+    public function destroy(/*Sabor*/ $sabor)
     {
-        $sabor= Sabor::find($sabor->id);
+        $sabor= Sabor::find($sabor);
         $sabor->delete();
         return redirect()->route('sabores.index');
     }

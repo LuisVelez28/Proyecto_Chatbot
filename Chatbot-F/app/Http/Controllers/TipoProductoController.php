@@ -5,15 +5,15 @@ namespace App\Http\Controllers;
 use App\Models\Tipo_producto;
 use Illuminate\Http\Request;
 
-class TipoProductosController extends Controller
+class TipoProductoController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $tipo_producto= Tipo_producto::all();
-        return view('cuenta_Admin.tipoProducto.create',compact('productos','tipos_producto'));
+        $tipos_producto= Tipo_producto::all();
+        return view('cuenta_Admin.tiposProducto.create',compact('tipos_producto'));
     }
 
     /**
@@ -48,18 +48,18 @@ class TipoProductosController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Tipo_producto $tipo_producto)
+    public function edit(/*Tipo_producto*/ $tipo_producto)
     {
-        $tipo_producto= Tipo_producto::find($tipo_producto->id);
-        return view('tipo_producto.edit',compact('tipo_producto'));
+        $tipo_producto= Tipo_producto::find($tipo_producto);
+        return view('cuenta_Admin.tiposProducto.edit',compact('tipo_producto'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Tipo_producto $tipo_producto)
+    public function update(Request $request, /*Tipo_producto*/ $tipo_producto)
     {
-        $tipo_producto= Tipo_producto::find($tipo_producto->id);
+        $tipo_producto= Tipo_producto::find($tipo_producto);
         $tipo_producto->nombre=$request->nombre;
         $tipo_producto->descripcion=$request->descripcion;
         $tipo_producto->save();
@@ -69,9 +69,9 @@ class TipoProductosController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Tipo_producto $tipo_producto)
+    public function destroy(/*Tipo_producto*/ $tipo_producto)
     {
-        $tipo_producto= Tipo_producto::find($tipo_producto->id);
+        $tipo_producto= Tipo_producto::find($tipo_producto);
         $tipo_producto->delete();
         return redirect()->route('tipoProductos.index');
     }

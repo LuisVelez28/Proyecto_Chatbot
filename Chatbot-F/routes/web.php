@@ -1,9 +1,9 @@
 <?php
 
-use App\Http\Controllers\ProductosController;
-use App\Http\Controllers\RangoPreciosController;
-use App\Http\Controllers\SaboresController;
-use App\Http\Controllers\TipoProductosController;
+use App\Http\Controllers\ProductoController;
+use App\Http\Controllers\RangoPrecioController;
+use App\Http\Controllers\SaborController;
+use App\Http\Controllers\TipoProductoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,8 +36,8 @@ Route::get('/Sedes', function () {
 Route::get('/CuentaAdmin', function () {
     return view('cuenta_Admin.indexAdmin');
 });
-Route::resource('/productos', ProductosController::class);
-Route::resource('/rangoPrecios', RangoPreciosController::class);
-Route::resource('/sabores', SaboresController::class);
-Route::resource('/tipoProductos', TipoProductosController::class);
+Route::resource('/productos', ProductoController::class);
+Route::resource('/rangoPrecios', RangoPrecioController::class);
+Route::resource('/sabores', SaborController::class);
+Route::resource('/tipoProductos', TipoProductoController::class);
 

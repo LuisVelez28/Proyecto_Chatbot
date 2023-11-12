@@ -2,18 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Rango_precio;
+use App\Models\RangoPrecio;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class RangoPreciosController extends Controller
+class RangoPrecioController extends Controller
 {
-    /**
+/**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $rangos_precios= Rango_precio::all();
-        return view('cuenta_Admin.rangoPrecio.create',compact('rangos_precios'));
+        $rangoPrecios= RangoPrecio::all();
+        return view('cuenta_Admin.rangoPrecio.create',compact('rangoPrecios'));
     }
 
     /**
@@ -29,39 +30,41 @@ class RangoPreciosController extends Controller
      */
     public function store(Request $request)
     {
-        $rango_precio= new Rango_precio();
+        $rango_precio= new RangoPrecio();
         $rango_precio->nombre=$request->nombre;
-        $rango_precio->descripcion=$request->descripcion;
+        $rango_precio->precio_min=$request->precio_min;
+        $rango_precio->precio_max=$request->precio_max;
         $rango_precio->save();
-        return redirect()->route('rangos_precios.index');
+        return redirect()->route('rangoPrecios.index');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Rango_precio $rango_precio)
+    public function show(RangoPrecio $rango_precio)
     {
-        $rango_precio= Rango_precio::find($rango_precio->id);
+        $rango_precio= RangoPrecio::find($rango_precio->id);
         return view('rango_precio.',compact('rango_precio'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Rango_precio $rango_precio)
+    public function edit(/*RangoPrecio*/ $rango_precio)
     {
-        $rango_precio= Rango_precio::find($rango_precio->id);
+        $rango_precio= RangoPrecio::find($rango_precio);
         return view('cuenta_Admin.rangoPrecio.edit',compact('rango_precio'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Rango_precio $rango_precio)
+    public function update(Request $request, /*RangoPrecio*/ $rango_precio)
     {
-        $rango_precio= Rango_precio::find($rango_precio->id);
+        $rango_precio= RangoPrecio::find($rango_precio);
         $rango_precio->nombre=$request->nombre;
-        $rango_precio->descripcion=$request->descripcion;
+        $rango_precio->precio_min=$request->precio_min;
+        $rango_precio->precio_max=$request->precio_max;
         $rango_precio->save();
         return redirect()->route('rangoPrecios.index');
     }
@@ -69,9 +72,9 @@ class RangoPreciosController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Rango_precio $rango_precio)
+    public function destroy(/*RangoPrecio*/ $rango_precio)
     {
-        $rango_precio= Rango_precio::find($rango_precio->id);
+        $rango_precio= RangoPrecio::find($rango_precio);
         $rango_precio->delete();
         return redirect()->route('rangoPrecios.index');
     }
