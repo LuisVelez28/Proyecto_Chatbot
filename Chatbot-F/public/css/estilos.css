@@ -46,3 +46,7 @@ a{
     max-width: 500px;
     max-height: 500px;
 }
+.texto-negro {
+    color: black;
+    font-size: 18px;
+}

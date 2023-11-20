@@ -13,14 +13,23 @@
 
     <link rel="apple-touch-icon" href="img/apple-icon.png">
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
-
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/templatemo.css">
-    <link rel="stylesheet" href="css/custom.css">
-
     <!-- Load fonts style after rendering the layout styles -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
     <link rel="stylesheet" href="css/fontawesome.min.css">
+    <style>
+        /* Estilos modificados */
+        .bg-success {
+            background-color: yellow !important;
+        }
+
+        .text-success {
+            color: yellow !important;
+        }
+
+        /* Agregar más estilos si es necesario */
+    </style>
+</head>
+
 </head>
 
  <!-- Header -->
@@ -59,71 +68,99 @@
 </nav>
     <!-- Close Header -->
 <body>
-    <div class="container">
+<div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="w-100 pt-1 mb-5 text-right">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="" method="get" class="modal-content modal-body border-0 p-0">
+                <div class="input-group mb-2">
+                    <input type="text" class="form-control" id="inputModalSearch" name="q" placeholder="Search ...">
+                    <button type="submit" class="input-group-text bg-success text-light">
+                        <i class="fa fa-fw fa-search text-white"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+    <section class="bg-success py-5">
+        <div class="container">
+            <div class="row align-items-center py-5">
+                <div class="col-md-8 text-white">
+                    <h1>Sobre Nosotros</h1>
+                    <p class="texto-negro">
+                    Como La plancha, somos una empresa que se dedica apasionadamente a la fabricación y distribución de productos alimenticios de alta calidad. Desde nuestros inicios nos hemos comprometido a ofrecer alimentos cuidadosamente elaborados con los mejores ingredientes y procesos rigurosos. Nuestro enfoque se centra en la excelencia en cada etapa de producción, desde la selección de materias primas frescas y saludables hasta la meticulosa preparación; esto con el objetivo de bridnarle a nuestros clientes, más que una comida, una experiencia.              </p>
+                </div>
+                <div class="col-md-4">
+                    <img src="img/blue.png" height="400" width="400">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Close Banner -->
+
+    <!-- Start Section -->
+    <section class="container py-5">
+        <div class="row text-center pt-5 pb-3">
+            <div class="col-lg-6 m-auto">
+                <h1 class="h1">Contáctanos</h1>
+                <p style="font-family: Roboto, sans-serif">
+                  Contamos con un servicio altamente cualificado. ¡Comunicate con nosotros!
+              </p>
+            </div>
+        </div>
         <div class="row">
 
-            <div class="col"> <!-- Esto es para la ventana de productos -->
-                <div class="jumbotron">
-                    <h1 class="centradotitulos">NUESTROS PRODUCTOS</h1>
-                    <p class="parrafos">Conoce nuestros productos. Con nosotros puedes vivir una experiencia inigualable
-                    </p>
-                    <hr class="my-4" />
-                    <img src="imagenes\productos.jpg" width="500" height="400" class="rounded-circle" />
-                    <hr class="my-4" />
-                    <p class="parrafos">¡Tenemos empanadas, panzerotis, dedos de queso, arepas de queso y muchos más!
-                    </p>
-                    <div class="text-center">
-                        <a href="/Productos" class="btn btn-danger">Productos</a>
-                    </div>
+            <div class="col-md-6 col-lg-6 pb-5">
+                <div class="h-100 py-5 services-icon-wap shadow">
+                    <div class="h1 text-success text-center"><i class="fa fa-truck fa-lg"></i></div>
+                    <h2 class="h5 mt-4 text-center">Instagram</h2>
                 </div>
             </div>
 
-            <div class="col"> <!-- Esto es para la ventana de Locales -->
-                <div class="jumbotron">
-                    <h1 class="centradotitulos">NUESTRAS SEDES</h1>
-                    <p class="parrafos">Estamos más cerca de lo que piensas, ven y vive un rato agradable, estamos
-                        listos para atenderte</p>
-                    <hr class="my-4" />
-                    <img src="imagenes\locales.jpg" width="500" height="400" class="rounded-circle" />
-                    <hr class="my-4" />
-                    <p class="parrafos">En Manizales estamos en diferentes locaciones. ¿Quieres conocerlas?</p>
-                    <div class="text-center">
-                        <a href="/Sedes" class="btn btn-danger">Sedes</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col"> <!-- Esto es para la ventana de Pedidos -->
-                <div class="jumbotron">
-                    <h1 class="centradotitulos">PARA TÚ DÍA A DÍA</h1>
-                    <p class="parrafos">Hoy es un buen día para disfrutar de nuestros ricos productos en compañía de la
-                        gente que quieres y la alegría que nos caracteriza</p>
-                    <hr class="my-4" />
-                    <img src="imagenes\pedidos.jpg" width="500" height="400" class="rounded-circle" />
-                    <hr class="my-4" />
-                    <p class="parrafos">¡No te quedes sin disfrutar de sabrosa comida que de seguro te dejará hecha agua
-                        la boca!</p>
-                    <div class="text-center">
-                        <button type="button" class="btn btn-danger">Loncheras y Combos</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col"> <!-- Esto es para la ventana de Contacto -->
-                <div class="jumbotron">
-                    <h1 class="centradotitulos">HABLA CON NOSOTROS</h1>
-                    <p class="parrafos">Este es el ChatBot de La Plancha; Aquí podras consultar información nuestra en
-                        cualquier momento y realizar tus pedidos directamente</p>
-                    <hr class="my-4" />
-                    <p class="parrafos">Estamos listos para atenderte ¡Escríbenos!</p>
-                    <div class="text-center">
-                        <button type="button" class="btn btn-danger">Hablar</button>
-                    </div>
+            <div class="col-md-6 col-lg-6 pb-5">
+              <div class="h-100 py-5 services-icon-wap shadow">
+                <div class="h1 text-success text-center"><i class="fas fa-exchange-alt"></i></div>
+                  <h2 class="h5 mt-4 text-center">Facebook</h2>
                 </div>
             </div>
 
         </div>
-    </div>
+    </section>
+    <!-- End Section -->
+                      
+
+    <!-- Start Footer -->
+    <footer class="bg-dark" id="tempaltemo_footer">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 text-success border-bottom pb-3 border-light logo">LA PLANCHA MANIZALES</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt fa-fw"></i>
+                            Calle 46a # 21 - 49, Manizales, Colombia
+                        </li>
+                        <li>
+                            <i class="fa fa-phone fa-fw"></i>
+                            <a class="text-decoration-none" href="tel:010-020-0340">3216304137</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope fa-fw"></i>
+                            <a class="text-decoration-none" href="mailto:info@company.com">gerencia.laplancha@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+        </div>
+        </div>
+
+
+
+    </footer>
 </body>
 
 </html>
