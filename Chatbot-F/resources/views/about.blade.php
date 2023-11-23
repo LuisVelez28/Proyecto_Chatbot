@@ -91,11 +91,12 @@
             <div class="row align-items-center py-5">
                 <div class="col-md-8 text-white">
                     <h1>Sobre Nosotros</h1>
-                    <p class="texto-negro">
-                    Como La plancha, somos una empresa que se dedica apasionadamente a la fabricación y distribución de productos alimenticios de alta calidad. Desde nuestros inicios nos hemos comprometido a ofrecer alimentos cuidadosamente elaborados con los mejores ingredientes y procesos rigurosos. Nuestro enfoque se centra en la excelencia en cada etapa de producción, desde la selección de materias primas frescas y saludables hasta la meticulosa preparación; esto con el objetivo de bridnarle a nuestros clientes, más que una comida, una experiencia.              </p>
+                    <p  class="texto-negro">
+                    Como La plancha, somos una empresa que se dedica apasionadamente a la fabricación y distribución de productos alimenticios de alta calidad. Desde nuestros inicios nos hemos comprometido a ofrecer alimentos cuidadosamente elaborados con los mejores ingredientes y procesos rigurosos.               </p>
+                    <p class="texto-negro">Nuestro enfoque se centra en la excelencia en cada etapa de producción, desde la selección de materias primas frescas y saludables hasta la meticulosa preparación; esto con el objetivo de bridnarle a nuestros clientes, más que una comida, una experiencia.</p>
                 </div>
                 <div class="col-md-4">
-                    <img src="img/blue.png" height="400" width="400">
+                    <img style="border:2px solid; color:black;" src="img/blue.png" height="400" width="400" class="rounded-circle" >
                 </div>
             </div>
         </div>
@@ -116,15 +117,27 @@
 
             <div class="col-md-6 col-lg-6 pb-5">
                 <div class="h-100 py-5 services-icon-wap shadow">
-                    <div class="h1 text-success text-center"><i class="fa fa-truck fa-lg"></i></div>
+                    <div class="h1 text-success text-center"></div>
+                    <div class="col-md-4 mx-auto d-flex align-items-center justify-content-center">
+                    <a href="https://www.instagram.com/laplanchamanizales/?hl=es-la">
+                    <img src="img/instagram.png" height="200" width="200" class="img-fluid" alt="Instagram Image">
+                    </a>
+                    </div>
                     <h2 class="h5 mt-4 text-center">Instagram</h2>
+          
                 </div>
+
             </div>
 
             <div class="col-md-6 col-lg-6 pb-5">
-              <div class="h-100 py-5 services-icon-wap shadow">
-                <div class="h1 text-success text-center"><i class="fas fa-exchange-alt"></i></div>
-                  <h2 class="h5 mt-4 text-center">Facebook</h2>
+              <div class="h-100 py-5 services-icon-wap shadow text-center">
+                <div class="h1 text-success"></div>
+                <div class="col-md-4 mx-auto d-flex align-items-center justify-content-center">
+                <a href="https://www.facebook.com/laplanchamanizales/?locale=es_LA">
+                <img src="img/facebook.png " height="200" width="200" class="img-fluid" alt="Facebook Image">
+                </a>
+                </div>
+                  <h2 class="h5 mt-4">Facebook</h2>
                 </div>
             </div>
 
@@ -146,12 +159,12 @@
                             Calle 46a # 21 - 49, Manizales, Colombia
                         </li>
                         <li>
-                            <i class="fa fa-phone fa-fw"></i>
-                            <a class="text-decoration-none" href="tel:010-020-0340">3216304137</a>
+                            <i class="fas fa-map-marker-alt fa-fw"></i>
+                            <a class="text-decoration-none" href="tel:321-630-4137">3216304137
                         </li>
                         <li>
-                            <i class="fa fa-envelope fa-fw"></i>
-                            <a class="text-decoration-none" href="mailto:info@company.com">gerencia.laplancha@gmail.com</a>
+                            <i class="fas fa-map-marker-alt fa-fw"></i>
+                            <a class="text-decoration-none" href="gerencia.laplancha@gmail.com">gerencia.laplancha@gmail.com</a>
                         </li>
                     </ul>
                 </div>

@@ -72,7 +72,7 @@
 <body>
     <br />
     <div class="text-center">
-        <h3 class="">Conoce Nuestros Productos</h3>
+        <h3 class="centradotitulos">Conoce Nuestros Productos</h3>
         <hr />
     </div>
     <div class="col-12">
@@ -82,9 +82,24 @@
                     <div class="row">
                         <div class="col-md-4 mb-3">
                             <div class="card">
-                                <img alt="100%x280" class="tamañoimagen" src="img\empanadas.jpg">
+                                <img  style="border:2px solid; color:black;"  alt="100%x280" class="square" class="tamañoimagen" src="img\empanadas.jpg">
+                                
                                 <div class="card-body">
-                                    <h5 class="card-title">Empanadas</h5>
+                                    <h5 class="centradotitulosproductos">Empanadas</h5>
+                                    <p>Las empanadas de la plancha son una deliciosa opción culinaria que se prepara mediante la cocción de empanadas rellenas en una plancha caliente en lugar de freírlas o hornearlas. Este método de cocción le confiere a las empanadas una textura crujiente por fuera y un relleno jugoso por dentro. La variedad de sabores disponibles para rellenar estas empanadas es amplia, lo que las convierte en una opción versátil y apetitosa.</p>
+                                    <h6 class="card-subtitle mb-2 text-muted"></h6>
+                                    <div class="row border-time">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <div class="card">
+                                <img  style="border:2px solid; color:black;"  alt="100%x280" class="square"  class="tamañoimagen" src="img\arepas.jpg">
+                                <div class="card-body">
+                                    <h5 class="centradotitulosproductos">Arepas de Queso</h5>
+                                    <p>La preparación de las arepas de queso de la plancha implica la mezcla de la masa de maíz con el queso, formando discos que se cocinan en una plancha caliente hasta que adquieren una textura crujiente por fuera y quedan suaves y esponjosas por dentro. El proceso de cocción en la plancha permite que el queso se derrita y se mezcle perfectamente con la masa, creando una arepa con un centro cremoso y un exterior dorado y ligeramente crujiente.</p>
                                     <h6 class="card-subtitle mb-2 text-muted"></h6>
                                     <div class="row border-time">
                                         <div class="col">
@@ -92,28 +107,14 @@
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                         <div class="col-md-4 mb-3">
                             <div class="card">
-                                <img alt="100%x280" class="tamañoimagen" src="img\arepas.jpg">
+                                <img  style="border:2px solid; color:black;"  class="square"  alt="100%x280" class="tamañoimagen" src="img\panzeroti.jpg">
                                 <div class="card-body">
-                                    <h5 class="card-title">Arepas de Queso</h5>
-                                    <h6 class="card-subtitle mb-2 text-muted"></h6>
-                                    <div class="row border-time">
-                                        <div class="col">
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-3">
-                            <div class="card">
-                                <img class="img-fluid" alt="100%x280" class="tamañoimagen" src="img\panzeroti.jpg">
-                                <div class="card-body">
-                                    <h5 class="card-title">Pancherottis</h5>
+                                    <h5 class="centradotitulosproductos">Plancherottis</h5>
+                                    <p>Los plancherottis de la plancha se cocinan cuidadosamente con el objetivo de garantizar  la calidad de este alimento y están rellenos de una mezcla deliciosa y bien equilibrada de carne sazonada, verduras frescas y quesos selectos .La masa utilizada para envolver estos ingredientes es fina y crujiente en el exterior, mientras que el relleno se cocina a la perfección, manteniendo su jugosidad y sabor.</p>
                                     <h6 class="card-subtitle mb-2 text-muted"></h6>
                                     <div class="row border-time">
                                         <div class="col">
@@ -131,9 +132,10 @@
 
                         <div class="col-md-4 mb-3">
                             <div class="card">
-                                <img class="img-fluid" alt="100%x280" class="tamañoimagen" src="img\pandebono.jpg">
+                                <img  style="border:2px solid; color:black;"  class="square"  alt="100%x280" class="tamañoimagen" src="img\pandebono.jpg">
                                 <div class="card-body">
-                                    <h5 class="card-title">Pandebonos</h5>
+                                    <h5 class="centradotitulosproductos">Pandebonos</h5>
+                                    <p>Los pandebonos de la plancha  son una deliciosa especialidad de la cocina colombiana, conocidos por su textura esponjosa y su sabor único. Estos son perfectamente horneados: por fuera, tiene una corteza dorada y crujiente que contrasta con su interior suave y esponjoso. El queso fresco, que se derrite durante el proceso de horneado, contribuye a la humedad y suavidad del pandebono, aportando también un toque salado y delicioso.</p>
                                     <h6 class="card-subtitle mb-2 text-muted"> </h6>
                                     <div class="row border-time">
                                         <div class="col">
@@ -146,84 +148,27 @@
                         </div>
                         <div class="col-md-4 mb-3">
                             <div class="card">
-                                <img class="img-fluid" alt="100%x280" class="tamañoimagen" src="img\jugos.jpg">
+                                <img  style="border:2px solid; color:black;"  alt="100%x280" class="square"  class="tamañoimagen" src="img\jugos.jpg">
                                 <div class="card-body">
-                                    <h5 class="card-title">Diversos Jugos</h5>
-                                    <h6 class="card-subtitle mb-2 text-muted">
-                                    </h6>
+                                    <h5 class="centradotitulosproductos">Diversos Jugos</h5>
+                                    <p>Los jugos que se venden en la plancha son una exquisita y diversa selección de bebidas que despiertan los sentidos con su gran variedad de sabores y combinaciones. La magia comienza con la frescura de los ingredientes: frutas tropicales vibrantes, hierbas aromáticas y otros elementos cuidadosamente seleccionados. Nuestros productos combinan perfecto con nuestros jugos, viviendo una experiencia inigualable</p>
                                     <div class="row border-time">
-                                        <div class="col">
-
-                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-4 mb-3">
                             <div class="card">
-                                <img class="img-fluid" alt="100%x280" class="tamañoimagen"
-                                    src="./img/conferencistas/eguerrero.jpg">
+                                <img  style="border:2px solid; color:black;"  alt="100%x280" class="square"  class="tamañoimagen" src="img\congelados.png">                             
                                 <div class="card-body">
-                                    <h5 class="card-title">Predicción basada en datos</h5>
-                                    <h6 class="card-subtitle mb-2 text-muted">Enrique Gonzalez Guerrero</h6>
+                                    <h5 class="centradotitulosproductos">Diversos Productos Congelados</h5>
+                                    <p>Los productos congelados de la plancha manejan una diversidad de alimentos que han sido sometidos a un proceso de congelación para preservar su frescura, sabor y calidad nutricional, lo que ralentiza o detiene el deterioro causado por microorganismos y enzimas. Productos  de grandes variedades, que pueden ser almacenados para luego solamente ser cocinados y puestos en la mesa. Siempre tendrás alimentos frescos para comer.</p>
                                     <div class="row border-time">
-                                        <div class="col">
-                                            2 de noviembre 2023 - 2:00 pm
-                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="row">
-
-                        <div class="col-md-4 mb-3">
-                            <div class="card">
-                                <img class="img-fluid" alt="100%x280" src="img/conferencistas/sousa.jpg">
-                                <div class="card-body">
-                                    <h5 class="card-title">Tendencias Modernas en Gestión de Proyectos</h5>
-                                    <h6 class="card-subtitle mb-2 text-muted">Andres Souza</h6>
-                                    <div class="row border-time">
-                                        <div class="col">
-                                            2 de noviembre 2023 - 4:00 pm
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-3">
-                            <div class="card">
-                                <img class="img-fluid" alt="100%x280" src="/img/conferencistas/mario.jpg">
-                                <div class="card-body">
-                                    <h5 class="card-title">Virtual Machines and Containers Running Artificial
-                                        Intelligent Applications</h5>
-                                    <h6 class="card-subtitle mb-2 text-muted">Mario German Castillo Ramírez</h6>
-                                    <div class="row border-time">
-                                        <div class="col">
-                                            3 de noviembre 2023 - 8:00 am
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-3">
-                            <div class="card">
-                                <img class="img-fluid" alt="100%x280" src="/img/conferencistas/gillber.jpg">
-                                <div class="card-body">
-                                    <h5 class="card-title">Ciberseguridad: ¿cómo construir una carrera en la era de
-                                        la IA?</h5>
-                                    <h6 class="card-subtitle mb-2 text-muted">Gilber Corrales Rubiano</h6>
-                                    <div class="row border-time">
-                                        <div class="col">
-                                            3 de noviembre 2023 - 10:00 am
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>

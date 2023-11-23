@@ -19,7 +19,29 @@ a{
 
 .centradotitulos{
     text-align: center;
+    font: oblique bold 250% cursive;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    color:rgb(255, 255, 65);
 }
+
+.centradotitulossedes{
+    text-align: center;
+    font: oblique bold 200% cursive;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    color:rgb(255, 255, 65);
+}
+
+
+
+.facebook{
+    display: 'flex';
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
 
 .parrafos{
     text-align: center;
@@ -41,6 +63,11 @@ a{
 
 }
 
+.square:hover{
+    transform:scale(0.9)
+
+}
+
 
 .tamañoimagen{
     max-width: 500px;
@@ -49,4 +76,13 @@ a{
 .texto-negro {
     color: black;
     font-size: 18px;
+}
+
+
+.centradotitulosproductos{
+    text-align: center;
+    font: oblique bold 150% cursive;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    color:rgb(255, 255, 65);
 }

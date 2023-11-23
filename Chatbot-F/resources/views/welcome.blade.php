@@ -23,6 +23,14 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
     <link rel="stylesheet" href="css/fontawesome.min.css">
+    <style>
+        /* Estilo personalizado para el fondo del título del chat bot */
+        .botmanWidget{
+            background-color: #FF0000; /* Cambia el color según tus preferencias */
+            color: #FF0000; /* Cambia el color del texto según tus preferencias */
+            padding: 10px; /* Ajusta el relleno según sea necesario */
+        }
+    </style>
 </head>
 <header>
     <!-- Header -->
@@ -80,7 +88,7 @@
                         </p>
                         <hr class="my-4" />
                         <a href="/Productos">
-                        <img src="img/productos.jpg" width="500" height="400" class="rounded-circle" />
+                        <img style="border:1px solid; color:black;" src="img/productos.jpg" width="500" height="400" class="rounded-circle" />
                         <hr class="my-4" />
                         </a>
                         <p class="parrafos">¡Tenemos empanadas, panzerotis, dedos de queso, arepas de queso y muchos
@@ -100,7 +108,7 @@
                         <hr class="my-4" />
                         <a href="/Sedes">
                             <!-- Enlace que lleva a la vista 'Sedes' -->
-                            <img src="img\locales.jpg" width="500" height="400" class="rounded-circle float-right"
+                            <img style="border:1px solid; color:black;" src="img\locales.jpg" width="500" height="400" class="rounded-circle float-right"
                                 class= "my-4" />
                         </a>
                         <hr class="my-4" />
@@ -117,7 +125,7 @@
     var botmanWidget = {
         title: 'La Plancha',
         bubbleAvatarUrl: 'img/Recurso 1.png',
-        introMessage: "✋ Hola! Soy un bot. ¿En qué puedo ayudarte?"
+        introMessage: "✋ ¡Hola! Soy el bot de La Plancha. ¿En qué puedo ayudarte?"
     };
     </script>
     <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
