@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ChatBotController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\RangoPrecioController;
 use App\Http\Controllers\SaborController;
@@ -40,4 +41,6 @@ Route::resource('/productos', ProductoController::class);
 Route::resource('/rangoPrecios', RangoPrecioController::class);
 Route::resource('/sabores', SaborController::class);
 Route::resource('/tipoProductos', TipoProductoController::class);
+
+Route::match(['get', 'post'], '/botman', [ChatBotController::class, 'index']);
 

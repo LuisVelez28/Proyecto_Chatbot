@@ -113,4 +113,12 @@
             </div>
         </div>
     </body>
+<script>
+    var botmanWidget = {
+        title: 'La Plancha',
+        bubbleAvatarUrl: 'img/Recurso 1.png',
+        introMessage: "✋ Hola! Soy un bot. ¿En qué puedo ayudarte?"
+    };
+    </script>
+    <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
 </html>
