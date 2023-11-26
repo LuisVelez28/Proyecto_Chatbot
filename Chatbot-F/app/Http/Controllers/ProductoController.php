@@ -13,6 +13,16 @@ class ProductoController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function getProducto() {
+        return response()->json(Producto::all(), 200);
+    }
+    public function getProductoById($id) {
+        $producto = Producto::find($id);
+        if(is_null($producto)) {
+            return response()->json(['message' => 'Producto no encontrado'], 404);
+        }
+        return response()->json($producto,200);
+    }
     public function index()
     {
         $productos= Producto::all();

@@ -8,4 +8,24 @@ use Illuminate\Database\Eloquent\Model;
 class Producto extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'nombre', 'descripcion', 'precio', 'stock', 'id_sabor', 'id_tipo_producto', 'id_rango_precio'
+    ];
+
+    public function sabor()
+    {
+        return $this->belongsTo(Sabor::class, 'id_sabor');
+    }
+
+    public function tipoProducto()
+    {
+        return $this->belongsTo(Tipo_Producto::class, 'id_tipo_producto');
+    }
+
+    public function rangoPrecio()
+    {
+        return $this->belongsTo(RangoPrecio::class, 'id_rango_precio');
+    }
 }
+
