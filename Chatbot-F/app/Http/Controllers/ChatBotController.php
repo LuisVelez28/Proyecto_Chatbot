@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\Producto;
 use BotMan\BotMan\Messages\Incoming\Answer;
-use BotMan\BotMan\BotMan;
 
 class ChatBotController extends Controller
 {
@@ -29,38 +28,96 @@ class ChatBotController extends Controller
         });
 
         $botman->hears('Mostrar productos', function ($bot) {
-            $bot->reply('Los productos disponibles son: ');
-
-            $productos = Producto::with(['sabor', 'tipoProducto', 'rangoPrecio'])->get();
-
+            $productos = Producto::all();
             foreach ($productos as $producto) {
-                $bot->reply("  - Producto: {$producto->nombre}:");
-                $bot->reply("  - Descripción: {$producto->descripcion}");
-                $bot->reply("  - Precio: {$producto->precio}");
-                $bot->reply("  - Stock: {$producto->stock}");
-
-                // Acceder a las relaciones
-                $bot->reply("  - Sabor: {$producto->sabor->nombre}");
-                $bot->reply("  - Tipo de Producto: {$producto->tipoProducto->nombre}");
-                $bot->reply("  - Rango de Precio: {$producto->rangoPrecio->nombre}");
+                $bot->reply(
+                    "| {$producto->nombre} | {$producto->descripcion} | {$producto->precio} |" . PHP_EOL
+                );
             }
         });
 
+        $botman->hears('.*sabor.*', function ($bot) {
+            $bot->ask('¿Qué sabor tienes ganas?', function(Answer $answer) {
+                $sabor = $answer->getText();
+
+                // Guardar la respuesta en una propiedad del controlador
+                $this->saborElegido = $sabor;
+
+                $productosSabor = Producto::whereHas('sabor', function ($query) use ($sabor) {
+                    $query->where('nombre', $sabor);
+                })->get();
+
+                if ($productosSabor->isEmpty()) {
+                    $this->say("Lo siento, no hay productos disponibles para el sabor '{$sabor}'.");
+                } else {
+                    foreach ($productosSabor as $producto) {
+                        $this->say(
+                            "| {$producto->nombre} | {$producto->descripcion} | {$producto->precio} |" . PHP_EOL
+                        );
+
+                    }
+                }
+            });
+        });
+
+        $botman->hears('.*precio.*', function ($bot) {
+            $bot->ask('¿Qué rango de precio estás buscando? (barato/caro)', function (Answer $answer) {
+                $rangoPrecio = $answer->getText();
+
+                // Guardar la respuesta en una propiedad del controlador
+                $this->rangoPrecioElegido = $rangoPrecio;
+
+                $productosRango = Producto::whereHas('rangoPrecio', function ($query) use ($rangoPrecio) {
+                    $query->where('nombre', $rangoPrecio);
+                })->get();
+
+                if ($productosRango->isEmpty()) {
+                    $this->say("Lo siento, no hay productos disponibles para el sabor '{$rangoPrecio}'.");
+                } else {
+                    foreach ($productosRango as $producto) {
+                        $this->say(
+                            "| {$producto->nombre} | {$producto->descripcion} | {$producto->precio} |" . PHP_EOL
+                        );
+
+                    }
+                }
+            });
+        });
+
+        $botman->hears('.*tipo.*', function ($bot) {
+            // Preguntar por el tipo de producto
+            $bot->ask('¿Qué tipo de producto prefieres?', function (Answer $answer) {
+                $tipoProducto = $answer->getText();
+
+                // Guardar la respuesta en una propiedad del controlador
+                $this->tipoProductoElegido = $tipoProducto;
+
+                $productosTipo = Producto::whereHas('tipoProducto', function ($query) use ($tipoProducto) {
+                    $query->where('nombre', $tipoProducto);
+                })->get();
+
+                if ($productosTipo->isEmpty()) {
+                    $this->say("Lo siento, no hay productos disponibles para el sabor '{$tipoProducto}'.");
+                } else {
+                    foreach ($productosTipo as $producto) {
+                    $this->say(
+                        "| {$producto->nombre} | {$producto->descripcion} | {$producto->precio} |" . PHP_EOL
+                    );
+
+                }
+            }
+        });
+    });
+
         $botman->hears('ayuda', function ($bot) {
-            $bot->reply('Los comandos disponibles son:
-            - "ayuda": muestra los comandos disponibles
-            - "hola": saluda al bot
-            - "adios": despide al bot
-            - "Mostrar productos": muestra los productos disponibles
-            - "buscar producto": busca un producto
-            - "buscar producto por tipo producto": busca un producto por tipo producto
-            - "buscar producto por sabor": busca un producto por sabor
-            - "buscar producto por rango de precio": busca un producto por rango de precio
-            - "buscar producto por tipo producto y sabor": busca un producto por tipo producto y sabor
-            - "buscar producto por tipo producto y rango de precio": busca un producto por tipo producto y rango de precio
-            - "buscar producto por sabor y rango de precio": busca un producto por sabor y rango de precio
-            - "buscar producto por tipo producto, sabor y rango de precio": busca un producto por tipo producto, sabor y rango de precio
-            ');
+            $bot->reply('Los comandos disponibles son:');
+            $bot->reply('ayuda: muestra los comandos disponibles');
+            $bot->reply('hola: saluda al bot');
+            $bot->reply('adios: despide al bot');
+            $bot->reply('Mostrar productos: muestra todos los productos disponibles');
+            $bot->reply('sabor: muestra los productos disponibles para un sabor');
+            $bot->reply('precio: muestra los productos disponibles para un rango de precio');
+            $bot->reply('tipo: muestra los productos disponibles para un tipo de producto');
         });
         $botman->listen();
     }

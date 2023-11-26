@@ -125,7 +125,7 @@
     var botmanWidget = {
         title: 'La Plancha',
         bubbleAvatarUrl: 'img/Recurso 1.png',
-        introMessage: "✋ ¡Hola! Soy el bot de La Plancha. ¿En qué puedo ayudarte?"
+        introMessage: "✋ ¡Hola! Soy el bot de La Plancha. Tengo varias formas de ayudarte, simplemente dime como quieres que te recomiende nuestros productos (sabor, precio, tipo de producto, etc)."
     };
     </script>
     <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
