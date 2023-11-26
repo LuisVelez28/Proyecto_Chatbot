@@ -72,7 +72,7 @@ class ChatBotController extends Controller
                 })->get();
 
                 if ($productosRango->isEmpty()) {
-                    $this->say("Lo siento, no hay productos disponibles para el sabor '{$rangoPrecio}'.");
+                    $this->say("Lo siento, no hay productos disponibles para el rango de precio '{$rangoPrecio}'.");
                 } else {
                     foreach ($productosRango as $producto) {
                         $this->say(
@@ -97,7 +97,7 @@ class ChatBotController extends Controller
                 })->get();
 
                 if ($productosTipo->isEmpty()) {
-                    $this->say("Lo siento, no hay productos disponibles para el sabor '{$tipoProducto}'.");
+                    $this->say("Lo siento, no hay productos disponibles para el tipo de producto '{$tipoProducto}'.");
                 } else {
                     foreach ($productosTipo as $producto) {
                     $this->say(
