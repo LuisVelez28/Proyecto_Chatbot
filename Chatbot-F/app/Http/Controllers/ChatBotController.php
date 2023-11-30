@@ -103,13 +103,83 @@ class ChatBotController extends Controller
                     $this->say(
                         "| {$producto->nombre} | {$producto->descripcion} | {$producto->precio} |" . PHP_EOL
                     );
-
                 }
-            }
+                }
+            });
         });
-    });
 
-        $botman->hears('ayuda', function ($bot) {
+        $botman->hears('crear producto', function ($bot) {
+            $bot->ask('Ingrese el nombre del producto?', function (Answer $answer) {
+                $nombre = $answer->getText();
+
+                // Guardar la respuesta en una propiedad del controlador
+                $this->nombreProducto = $nombre;
+
+                // Preguntar por la descripcion del producto
+                $this->ask('Ingrese la descripcion del producto?', function (Answer $answer) {
+                    $descripcion = $answer->getText();
+
+                    // Guardar la respuesta en una propiedad del controlador
+                    $this->descripcionProducto = $descripcion;
+
+                    // Preguntar por el precio del producto
+                    $this->ask('Ingrese el precio del producto?', function (Answer $answer) {
+                        $precio = $answer->getText();
+
+                        // Guardar la respuesta en una propiedad del controlador
+                        $this->precioProducto = $precio;
+
+                        // Preguntar por el stock del producto
+                        $this->ask('Ingrese el stock del producto?', function (Answer $answer) {
+                            $stock = $answer->getText();
+
+                            // Guardar la respuesta en una propiedad del controlador
+                            $this->stockProducto = $stock;
+
+                            // Preguntar por el sabor del producto
+                            $this->ask('Ingrese el sabor del producto? | 1. barato | 2. caro |', function (Answer $answer) {
+                                $sabor = $answer->getText();
+
+                                // Guardar la respuesta en una propiedad del controlador
+                                $this->saborProducto = $sabor;
+
+                                // Preguntar por el rango de precio del producto;
+                                $this->ask('Ingrese el rango de precio del producto? | 1. Dulce | 2. Salado | 3. Amargo | 4. Acido
+                                | 5. Picante | 6. Sin sabor |', function (Answer $answer) {
+                                    $rangoPrecio = $answer->getText();
+
+                                    // Guardar la respuesta en una propiedad del controlador
+                                    $this->rangoPrecioProducto = $rangoPrecio;
+
+                                    // Preguntar por el tipo de producto
+                                    $this->ask('Ingrese el tipo de producto? | 1. empanadas | 2. arepas | 3. arepas de huevo | 4. plancherotti
+                                    | 5. panaderia | 6. productos congelados | 7. bebidas', function (Answer $answer) {
+                                        $tipoProducto = $answer->getText();
+
+                                        // Guardar la respuesta en una propiedad del controlador
+                                        $this->tipoProducto = $tipoProducto;
+
+                                        // Crear el producto
+                                        $producto = new Producto();
+                                        $producto->nombre = $this->nombreProducto;
+                                        $producto->descripcion = $this->descripcionProducto;
+                                        $producto->precio = $this->precioProducto;
+                                        $producto->stock = $this->stockProducto;
+                                        $producto->id_sabor = $this->saborProducto;
+                                        $producto->id_rango_precio = $this->rangoPrecioProducto;
+                                        $producto->id_tipo_producto = $this->tipoProducto;
+                                        $producto->save();
+                                        $this->say("Producto creado correctamente");
+                                    });
+                                });
+                            });
+                        });
+                    });
+                });
+            });
+        });
+
+        $botman->hears('.*ayuda*.', function ($bot) {
             $bot->reply('Los comandos disponibles son:');
             $bot->reply('ayuda: muestra los comandos disponibles');
             $bot->reply('hola: saluda al bot');
@@ -120,5 +190,7 @@ class ChatBotController extends Controller
             $bot->reply('tipo: muestra los productos disponibles para un tipo de producto');
         });
         $botman->listen();
+
+
     }
 }
