@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Http\Conversations\busquedaProducto;
 use App\Models\Producto;
+use App\Models\RangoPrecio;
+use App\Models\Sabor;
 use BotMan\BotMan\Messages\Incoming\Answer;
 
 class ChatBotController extends Controller
@@ -34,80 +37,14 @@ class ChatBotController extends Controller
                     "| {$producto->nombre} | {$producto->descripcion} | {$producto->precio} |" . PHP_EOL
                 );
             }
+        });       
+
+        $botman->hears('Pedir', function ($bot) {
+            $bot->reply(')sasas');
+            $bot->starConversation(new busquedaProducto);
         });
 
-        $botman->hears('.*sabor.*', function ($bot) {
-            $bot->ask('¿Qué sabor tienes ganas?', function(Answer $answer) {
-                $sabor = $answer->getText();
 
-                // Guardar la respuesta en una propiedad del controlador
-                $this->saborElegido = $sabor;
-
-                $productosSabor = Producto::whereHas('sabor', function ($query) use ($sabor) {
-                    $query->where('nombre', $sabor);
-                })->get();
-
-                if ($productosSabor->isEmpty()) {
-                    $this->say("Lo siento, no hay productos disponibles para el sabor '{$sabor}'.");
-                } else {
-                    foreach ($productosSabor as $producto) {
-                        $this->say(
-                            "| {$producto->nombre} | {$producto->descripcion} | {$producto->precio} |" . PHP_EOL
-                        );
-
-                    }
-                }
-            });
-        });
-
-        $botman->hears('.*precio.*', function ($bot) {
-            $bot->ask('¿Qué rango de precio estás buscando? (barato/caro)', function (Answer $answer) {
-                $rangoPrecio = $answer->getText();
-
-                // Guardar la respuesta en una propiedad del controlador
-                $this->rangoPrecioElegido = $rangoPrecio;
-
-                $productosRango = Producto::whereHas('rangoPrecio', function ($query) use ($rangoPrecio) {
-                    $query->where('nombre', $rangoPrecio);
-                })->get();
-
-                if ($productosRango->isEmpty()) {
-                    $this->say("Lo siento, no hay productos disponibles para el rango de precio '{$rangoPrecio}'.");
-                } else {
-                    foreach ($productosRango as $producto) {
-                        $this->say(
-                            "| {$producto->nombre} | {$producto->descripcion} | {$producto->precio} |" . PHP_EOL
-                        );
-
-                    }
-                }
-            });
-        });
-
-        $botman->hears('.*tipo.*', function ($bot) {
-            // Preguntar por el tipo de producto
-            $bot->ask('¿Qué tipo de producto prefieres?', function (Answer $answer) {
-                $tipoProducto = $answer->getText();
-
-                // Guardar la respuesta en una propiedad del controlador
-                $this->tipoProductoElegido = $tipoProducto;
-
-                $productosTipo = Producto::whereHas('tipoProducto', function ($query) use ($tipoProducto) {
-                    $query->where('nombre', $tipoProducto);
-                })->get();
-
-                if ($productosTipo->isEmpty()) {
-                    $this->say("Lo siento, no hay productos disponibles para el tipo de producto '{$tipoProducto}'.");
-                } else {
-                    foreach ($productosTipo as $producto) {
-                    $this->say(
-                        "| {$producto->nombre} | {$producto->descripcion} | {$producto->precio} |" . PHP_EOL
-                    );
-
-                }
-            }
-        });
-    });
 
         $botman->hears('ayuda', function ($bot) {
             $bot->reply('Los comandos disponibles son:');
@@ -120,5 +57,7 @@ class ChatBotController extends Controller
             $bot->reply('tipo: muestra los productos disponibles para un tipo de producto');
         });
         $botman->listen();
+
     }
+
 }
