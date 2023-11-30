@@ -42,5 +42,6 @@ Route::resource('/rangoPrecios', RangoPrecioController::class);
 Route::resource('/sabores', SaborController::class);
 Route::resource('/tipoProductos', TipoProductoController::class);
 
+Route::get('/emp',[ProductoController::class,'empanadas']);
 Route::match(['get', 'post'], '/botman', [ChatBotController::class, 'index']);
 

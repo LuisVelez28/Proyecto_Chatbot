@@ -7,11 +7,17 @@ use App\Http\Conversations\busquedaProducto;
 use App\Models\Producto;
 use App\Models\RangoPrecio;
 use App\Models\Sabor;
+use App\Models\Tipo_producto;
+use BotMan\BotMan\BotMan;
 use BotMan\BotMan\Messages\Incoming\Answer;
 
 class ChatBotController extends Controller
 {
     private $nombre_cliente;
+    private $tempTipo;
+    private $tempSabor;
+    private $tempPrecio;
+
 
     public function index()
     {
@@ -40,8 +46,10 @@ class ChatBotController extends Controller
         });       
 
         $botman->hears('Pedir', function ($bot) {
-            $bot->reply(')sasas');
-            $bot->starConversation(new busquedaProducto);
+            //$bot->reply('Que bendicion');
+            $this->productFinder($bot);
+            // $pedir=new busquedaProducto;
+            // $pedir->main($bot);
         });
 
 
@@ -58,6 +66,104 @@ class ChatBotController extends Controller
         });
         $botman->listen();
 
+    }
+
+    protected function productFinder(BotMan $bot){
+        $opciones="Que tipo de producto deseas?\nLas opciones son: ";
+
+        $tipos= Tipo_producto::all();
+        foreach($tipos as $tipo){
+            $opciones .= $tipo->nombre." | ";
+        }
+
+        $bot->ask($opciones, function(Answer $answer) use ($bot){
+            $this->say("\n");
+            $ans=$answer->getText();
+            $this->say($ans);
+            // $this->nombre_cliente=$answer->getText();
+
+            // $bot->reply("ha digitado ");
+            $idTipo = Tipo_producto::where('nombre',$ans)->first();
+            //$this->say("bbb".$idTipo);
+            //$this->say($temp2);
+
+            if(isset($idTipo)){
+                $this->say("bbb".$idTipo->id);
+                $this->tempTipo=$idTipo->id;
+                $this->say("ccc".$this->tempTipo);
+                $this->saborFinder($bot);
+            }else{
+                $this->say('Lo siento, no reconozco ese tipo de producto');
+                $this->productFinder($bot);
+            }
+        });
+    }
+
+    protected function saborFinder(BotMan $bot){
+        $opciones='Que tipo de sabor deseas?\nLas opciones son: ';
+        $tipos= Sabor::all();
+        foreach($tipos as $tipo){
+            $opciones .= $tipo->nombre.' | ';
+        }
+
+        $bot->ask($opciones, function(Answer $answer) use ($bot){
+            $this->say("\n");
+            $ans=$answer->getText();
+            $this->say($ans);
+            // $this->nombre_cliente=$answer->getText();
+
+            // $bot->reply("ha digitado ");
+            $idSabor = Sabor::where('nombre',$ans)->first();
+
+            if(isset($idSabor)){
+                $this->say("bbb".$idSabor->id);
+                $this->tempSabor=$idSabor->id;  
+                $this->say("ccc".$this->tempSabor);
+                $this->rangoFinder($bot);
+            }else{
+                $bot->reply('Lo siento, no reconozco ese tipo de producto');
+                $this->saborFinder($bot);
+            }
+        });
+    }
+
+    
+    protected function rangoFinder(BotMan $bot){
+        $opciones='Que tipo de sabor deseas?\nLas opciones son: ';
+        $tipos= RangoPrecio::all();
+        foreach($tipos as $tipo){
+            $opciones .= $tipo->nombre.' | ';
+        }
+
+        $bot->ask($opciones, function(Answer $answer) use ($bot){
+            $this->say("\n");
+            $ans=$answer->getText();
+            $this->say($ans);
+            // $this->nombre_cliente=$answer->getText();
+
+            // $bot->reply("ha digitado ");
+            $rangoPrecio = RangoPrecio::where('nombre',$ans)->first();
+
+            if(isset($idSabor)){
+                $this->say("bbb".$rangoPrecio->id);
+                $this->tempPrecio=$rangoPrecio->id;  
+                $this->say("ccc".$this->tempPrecio);
+                $this->findProduct($bot);
+            }else{
+                $bot->reply('Lo siento, no reconozco ese rango');
+                $this->rangoFinder($bot);
+            }
+        });
+    }
+
+    protected function findProduct(Botman $bot){
+        $condiciones=[
+            'id_sabor'=>$this->tempTipo,
+            'id_rango_precio'=>$this->tempPrecio,
+            'id_tipo_producto'=>$this->tempSabor,
+        ];
+        $producto=Producto::where($condiciones);
+        $bot->reply($producto);
     }
 
 }

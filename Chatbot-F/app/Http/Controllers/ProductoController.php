@@ -102,5 +102,11 @@ class ProductoController extends Controller
         $producto->delete();
         return redirect()->route('productos.index');
     }
+    
+    public function empanadas(){
+        $emp= Tipo_producto::where('nombre','empanada')->first()->id;
+        dd($emp);
+    }
+
 }
 
